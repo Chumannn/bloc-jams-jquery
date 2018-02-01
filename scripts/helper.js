@@ -1,0 +1,3 @@
+class Helper {
+  const helper
+}
