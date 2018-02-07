@@ -40,7 +40,8 @@ class Player {
 
   skipTo (percent) {
     if (this.playState !== 'playing') { return }
-    this.soundObject.setTime( (percent / 100) * this.soundObject.getDuration() );
+    //this.soundObject.getTime( (percent / 100) * this.soundObject.getDuration() );
+    this.soundObject.setTime( (percent / 100) * this.soundObject.getDuration());
   }
 
   setVolume (percent) {
@@ -48,8 +49,12 @@ class Player {
     this.soundObject.setVolume(percent);
   }
   prettyTime (timeInSeconds) {
-    const minutes = Math.floor(getDuration() / 60);
-    const seconds = Math.floor(getDuration() % 60);
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = Math.floor(timeInSeconds % 60);
+// PROUD OF THIS WHILE LOOP
+      while(seconds < 10){
+        return minutes + ":0" + seconds
+      }
         return minutes + ":" + seconds
   }
 
