@@ -51,7 +51,7 @@ class Player {
     const minutes = Math.floor(this.soundObject / 60);
     const seconds = this.soundObject - minutes + 60;
         return minutes + ":" + seconds
-
+      console.log(prettyTime())
   }
 }
 
